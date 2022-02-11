@@ -1,0 +1,178 @@
+@use "sass:math";
+@import './assets/styles/.mixins';
+.App {
+   
+}
+
+@import "./assets/styles/.variables";
+
+a{
+    text-decoration: none;
+    color: grey;
+}
+.bg-theme{
+    background-color: $theme_color;
+    color: white;
+}
+
+.btn{
+    min-width: $btn_size;
+    padding:$base_padding $base_padding * 2;
+    border: none;
+    border-radius: 7px;
+    text-align: center;
+}
+.btn-lg{
+    min-width: $btn_size * 1.5;
+    padding:$base_padding * 2.5 $base_padding * 4;
+}
+.text-light{
+    color: $light;
+}
+.bg-blur{
+ background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+ backdrop-filter:blur(50px)
+}
+
+.bg-light{
+    background: $light;
+    color: grey;
+}
+.text-theme{
+    color: $theme_color;
+}
+.text-center{
+    text-align: center;
+}
+.container{
+    padding: 8px 20px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.m-auto{
+    margin:auto;
+}
+@for $i from 1 through 10{
+    $p:$i * 10;
+    $vh:$i * 10;
+
+    .w-#{$p}{
+      width:$p * 1%;
+    }
+    .h-#{$p}{
+        height: $p * 1%;
+    }
+    .min-w-#{$p}{
+        width:$p * 1%;
+    }
+    .vh-#{$p}{
+        height:$p * 1vh;
+    }
+    .min-vh-#{$p}{
+        min-height:$vh * 1vh;
+    }
+    
+}
+.row{
+    @include size($height:100%);
+    display:flex;
+    flex-wrap:wrap;
+    width: 100%;
+    margin: auto;
+    @for $col from 1 through 12{
+        
+        $p:math.div($col,12.2) * 100%;
+        .col-#{$col}{
+           width:$p;
+           margin-right: .5%;
+        }
+        &:last-child{
+            margin-right:0%;
+        }
+        @debug math.div($col,12) * 100%;
+    }
+}
+@for $p from 1 through 5{
+    .p-#{$p}{
+        padding: $base_padding * $p;
+    }
+    .pl-#{$p}{
+        padding-left: $base_padding * $p;
+    }
+    .pr-#{$p}{
+        padding-right: $base_padding * $p;
+    }
+    .pt-#{$p}{
+        padding-top: $base_padding * $p;
+    }
+    .m-#{$p}{
+        margin: $base_padding * $p;
+    }
+    .ml-#{$p}{
+        margin-left: $base_padding * $p;
+    }
+    .mr-#{$p}{
+        margin-right: $base_padding * $p;
+    }
+    .mt-#{$p}{
+        margin-top: $base_padding * $p;
+    }
+    .mb-#{$p}{
+        margin-bottom: $base_padding * $p;
+    }
+}
+.frontend{
+    h1,h5{
+        color:$light;
+    }
+}
+.backend{
+    h1,h5{
+        color:$light;
+    }
+}
+.mobile{
+    h1,h5{
+        color:$light;
+    }
+}
+.text-secondary{
+    color: grey;
+}
+
+.ml-auto{
+  margin-left: auto;
+}
+.hover-text-theme{
+    &:hover{
+        color: $theme_color !important;
+    }
+    transition: all ease 0.2s;
+}
+.theme-overlay{
+    background: linear-gradient($theme_overlay,$theme_overlay);
+}
+.hover-overlay-theme{
+    &:hover{
+        background: linear-gradient($theme_overlay,$theme_overlay);
+    }
+    transition: all ease 0.2s;
+}
+.hover-scale{
+    &:hover{
+       transform:scale(1.05);
+    }
+    transition: all ease 0.2s;
+}
+.bg-complement{
+    background: $bg;
+}
+.text-lighter{
+    color: lightgray;
+}
+@for $i from 1 through 10{
+    .fs-#{$i}{
+        font-size: $font_size * 0.4 * $i ;
+    }
+}
