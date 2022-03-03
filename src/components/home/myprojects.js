@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Tabs from './tabs'
 import { myProjects } from './projectList'
+import {motion} from 'framer-motion'
 
 export default function MyProject(){
     const allprojects =myProjects
@@ -12,8 +13,7 @@ export default function MyProject(){
     }
     
     return(
-        <div className="my-project">
-              <Tabs page={3}/>
+        <div className="my-project" id='My-Projects'>
           <div className="w-80 mt-3 m-auto p-2">
               <h1 className="text-theme"><span>03.</span> My Projects</h1>
             <div className="row">
@@ -29,18 +29,27 @@ export default function MyProject(){
                   </ul>
                 </div> 
                 <div className="col-6">
-                  <div className="w-100 card p-3 bg-complement vh-50">
+                  <div className="w-100 card p-3 bg-complement min-vh-50">
                     {current_project != null ?(
-                        <div className="w-90 m-auto">
+                     <div className="w-90 m-auto">
                          <header className="icons">
 
                          </header>
-                         <div>
+                         <motion.div
+                         variants={{
+                         visible: { opacity: 1 },
+                         hidden: { opacity: 0 },
+                         }}
+                        >
+                        <div>
                              <h1 className="text-theme">0{current_project.id}. {current_project.project_name}</h1>
                              <p className="text-light">{current_project.project_description}</p><br/>
                              <p className="text-lighter fs-2">{current_project.tools.map(tool=>`${tool} `)}</p>
                          </div>
+                        </motion.div>
+
                         </div>
+                     
                     ):(
                         <div className="w-90 m-auto text-theme p-3" style={{textAlign:"center"}}>
                             <h1 className="mt-3">You Have Not Selected Any Of My Project</h1>

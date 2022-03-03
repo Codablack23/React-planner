@@ -42,5 +42,19 @@ export const myProjects =  [
             url:""
         }
       },
+      {
+        id:4,
+        project_name:"Vue Blog Blah",
+        project_description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita mollitia explicabo ad. Blanditiis voluptas fugit iusto ipsam totam dolorum nostrum, nam, eaque eveniet alias in unde autem explicabo corrupti delectus.",
+        tools:[
+            "Vue js",
+            "Strapi",
+            "Typescript"
+        ],
+        links:{
+            github:"",
+            url:""
+        }
+      }
       
   ]

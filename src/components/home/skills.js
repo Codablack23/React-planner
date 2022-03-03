@@ -2,8 +2,7 @@ import Tabs from './tabs'
 
 const Skills = () => {
     return ( 
-        <div className="skills container">
-            <Tabs page={4}/>
+        <div className="skills container" id="Skills-&-Experience">
            <div className="w-80 m-auto">
             <div className="row">
                 <div className="col-6">

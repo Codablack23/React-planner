@@ -2,13 +2,12 @@ import Tabs from './tabs'
 
 export default function Services(){
     return(
-        <div className="services">
-           <Tabs page={2}/>
+        <div className="services" id="My-Services">
             <div className="container w-70 m-auto" style={{paddingTop:"2%",}}>
                 {/* <h1 className="text-center">What Can I Build?</h1> */}
                <div className="row">
                  <div className="col-7">
-                 <div className="services-heading w-80 text-light">
+                 <div className="services-heading w-80 p-5 text-light">
                       <h1>02.<br/> How <span className="text-theme">I</span> Can <span className="text-theme">Contribute</span> to Your <span className="text-theme">Project</span></h1>         
                     </div>
                  </div>

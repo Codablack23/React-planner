@@ -8,10 +8,11 @@
   font-family: 'Roboto Mono', monospace;
 }
 body,html {
-  background-image:url("./assets/images/bg1.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(10,25,47,1),rgba(10,25,47,1));
+  height: 100%;
+  max-width: 100%;
 }
 
 code {

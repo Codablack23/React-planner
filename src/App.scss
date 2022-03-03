@@ -1,8 +1,5 @@
 @use "sass:math";
 @import './assets/styles/.mixins';
-.App {
-   
-}
 
 @import "./assets/styles/.variables";
 
@@ -174,5 +171,16 @@ a{
 @for $i from 1 through 10{
     .fs-#{$i}{
         font-size: $font_size * 0.4 * $i ;
+    }
+}
+@media screen and (max-width:720px) {
+    .row{
+        display: block;
+    }
+    @for $col from 1 through 12{
+        .col-#{$col}{
+           min-width: 90%;
+           margin: auto;
+        }
     }
 }

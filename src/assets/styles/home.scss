@@ -8,12 +8,30 @@
 
 
 .Home{
-    min-width:100%;
-    display: flex;
+    width:100%;
+    overflow-x: hidden;
 }
+::-webkit-scrollbar {
+    width: 7px;
+    background: linear-gradient($theme_overlay,$theme_overlay);
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(rgba(10,25,47,1),rgba(10,25,47,1));
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $theme_overlay;
+    border-radius: 10px;
+    height: 50px;
+  }
+  
+  /* Handle on hover */
 .hero{
-    min-width:100%;
-    max-height: 100%;
+    @include size();
+
     background: linear-gradient(rgba(10,25,47,1),rgba(10,25,47,1));
     // backdrop-filter: blur(20px);
     position: relative;
@@ -32,7 +50,7 @@
     }
     @include size();
     .hero-info{
-        width: 35%;
+        width: 50%;
         margin-left:auto;
         margin-right: 0;
         p{
@@ -57,6 +75,7 @@
             margin-top: 0;
             font-size:$font_size * 1.15;
             margin-bottom: 0;
+            width: 65%;
         }
         .hero-btn{
             &:hover{
@@ -117,6 +136,7 @@ nav.navbar{
     }
 }
 .services{
+   @include size();
    @include layout($blur:3px,$opacity:1);
    h1{
     font-family: 'Roboto Mono', monospace;
@@ -141,6 +161,7 @@ nav.navbar{
    }
 }
 .skills{
+    @include size();
     @include layout($opacity:1);
     .experiences{
         transition: all ease 0.2s;
@@ -193,6 +214,10 @@ nav.navbar{
 }
 .your-project{
     @include layout($blur:5px,$opacity:1);
+    @include size();
+    .project-container{
+        width: 50%;
+    }
     .contact{
         transition: all ease 0.2s;
         list-style: none;
@@ -225,11 +250,20 @@ nav.navbar{
     }
 }
 .tabs{
-    
+    transition:all ease 0.2s;
     .tab-list{
         display:flex;
         list-style-type: none;
         justify-content: space-between;
+        .close{
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 2%;
+            font-size: $font_size * 1.5;
+            color: $theme_color;
+
+        }
         .tab-item{
             &:hover{
                 background: $bg;
@@ -243,13 +277,34 @@ nav.navbar{
         }
     }
 }
+.dropdown{
+    display: none;
+    .dropdown-actions{
+        display: flex;
+        justify-content: end;
+        button{
+         border: none;
+         background: none;
+         font-size: $font_size * 2;        
+         color: $theme_color;       
+        }
+    }
+}
 .my-project{
+    @include size();
     @include layout($blur:5px,$opacity:1);
     .project-list{
         transition: all ease 0.2s;
         list-style: none;
         height: 55vh;
         overflow-y: scroll;
+        ::-webkit-scrollbar-track {
+            background:none;
+          }
+        ::-webkit-scrollbar {
+        width: 7px;
+        background: none;
+        }
         h1{
             font-weight: 800;
         }
@@ -268,5 +323,68 @@ nav.navbar{
              justify-content: space-between;
             }
         }
+    }
+}
+@media screen and (max-width:720px) {
+    .tabs{
+      width: 100%;
+      height: 0%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      overflow: hidden;
+      background: linear-gradient($theme_overlay,$theme_overlay);
+      backdrop-filter: blur(8px);
+        .tab-list{
+             flex-flow:column wrap;
+            position: relative;
+            width: 80%;
+            margin: auto;
+            top: 10%;
+            text-align: center;
+            align-items:center;
+            .tab-item{
+                margin: 2%;
+                width: 30%;
+            }
+            .close{
+                display: block;
+            }
+        }
+    }
+    .dropdown{
+        display: block;
+    }
+    .hero-text{
+        margin-top: 0;
+        font-size:$font_size * 1.10;
+        margin-bottom: 0;
+        width: 100%;
+    }
+    .hero{
+ 
+ 
+        .hero-section{
+            padding:1% 4%;
+            padding-top: 0.5%;
+            .hero-title{
+                font-size: $font_size * 4;
+                margin-bottom:0;
+                font-weight: 900;
+                font-family: 'Roboto Mono', monospace;
+                span{
+                    font-family: 'Roboto Mono', monospace;
+                }
+                margin-top: none;
+            }
+            .hero-text{
+                width: 100%;
+            }
+            
+        }
+    }
+    .project-container{
+        min-width: 80%;
     }
 }
