@@ -7,7 +7,7 @@ export default function MyProject(){
     const [current_project,setCurrentProject]=useState(null)
 
     const selectProject=(id)=>{
-      const project = allprojects.filter(pro=>pro.id==id)
+      const project = allprojects.filter(pro=>pro.id === id)
       setCurrentProject(project[0])
     }
     

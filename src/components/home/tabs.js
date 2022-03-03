@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function Tabs({page}){
-    const [current_page,setCurrentPage]=useState(page)
+    const [current_page]=useState(page)
     const tabs=[
         {page:1,pageName:'Home'},
         {page:2,pageName:'My-Services'},
@@ -30,8 +30,8 @@ export default function Tabs({page}){
             )
         }
         else{
-            const prev_tab=tabs.filter(tab=>tab.page == prev)
-            const next_tab=tabs.filter(tab=>tab.page == next)
+            const prev_tab=tabs.filter(tab=>tab.page === prev)
+            const next_tab=tabs.filter(tab=>tab.page === next)
            const page_tabs=[...prev_tab,...next_tab]
            console.log(page_tabs)
             return(
