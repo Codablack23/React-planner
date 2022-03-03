@@ -1,5 +1,3 @@
-import Tabs from './tabs'
-
 const Skills = () => {
     return ( 
         <div className="skills container" id="Skills-&-Experience">

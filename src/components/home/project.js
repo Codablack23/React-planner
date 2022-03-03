@@ -1,5 +1,3 @@
-import Tabs from './tabs'
-
 export default function Project(){
   return(
     <div className="your-project" id='Your-Project'>

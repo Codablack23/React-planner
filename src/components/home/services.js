@@ -1,5 +1,3 @@
-import Tabs from './tabs'
-
 export default function Services(){
     return(
         <div className="services" id="My-Services">
