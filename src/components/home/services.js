@@ -1,7 +1,7 @@
 export default function Services(){
     return(
         <div className="services" id="My-Services">
-            <div className="container w-70 m-auto" style={{paddingTop:"2%",}}>
+            <div className="container w-90 m-auto" style={{paddingTop:"1%",}}>
                 {/* <h1 className="text-center">What Can I Build?</h1> */}
                <div className="row">
                  <div className="col-7">

@@ -1,7 +1,7 @@
 const Skills = () => {
     return ( 
         <div className="skills container" id="Skills-&-Experience">
-           <div className="w-80 m-auto">
+           <div className="w-100 m-auto">
             <div className="row">
                 <div className="col-6">
                 <ul className="experiences p-1">
@@ -34,7 +34,7 @@ const Skills = () => {
 
                 </div>
                 <div className="col-6">
-                   <div className="all-skills w-80 m-auto ">
+                   <div className="all-skills w-90 m-auto pr-5 ">
                      <h1 className="text-light">Skills</h1>
                      <ul className="skills-list">
                        <li className="theme-overlay p-2"><i className="fab fa-node-js text-theme"></i></li>

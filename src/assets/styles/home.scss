@@ -8,7 +8,7 @@
 
 
 .Home{
-    width:100%;
+    max-width:100%;
     overflow-x: hidden;
 }
 ::-webkit-scrollbar {
@@ -216,7 +216,8 @@ nav.navbar{
     @include layout($blur:5px,$opacity:1);
     @include size();
     .project-container{
-        width: 50%;
+        min-width: 50%;
+        
     }
     .contact{
         transition: all ease 0.2s;
@@ -296,8 +297,9 @@ nav.navbar{
     .project-list{
         transition: all ease 0.2s;
         list-style: none;
-        height: 55vh;
+        max-height: 55vh;
         overflow-y: scroll;
+        overflow-x: hidden;
         ::-webkit-scrollbar-track {
             background:none;
           }
@@ -324,8 +326,18 @@ nav.navbar{
             }
         }
     }
+    
+}
+.project-sm{
+    display: none;
 }
 @media screen and (max-width:720px) {
+    .project-sm{
+        display: block;
+    }
+    .project-lg{
+        display: none;
+    }
     .tabs{
       width: 100%;
       height: 0%;

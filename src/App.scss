@@ -179,8 +179,7 @@ a{
     }
     @for $col from 1 through 12{
         .col-#{$col}{
-           min-width: 90%;
-           margin: auto;
+           min-width: 95%;
         }
     }
 }

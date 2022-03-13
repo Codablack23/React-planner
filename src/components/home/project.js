@@ -1,7 +1,10 @@
 export default function Project(){
   return(
     <div className="your-project" id='Your-Project'>
-        <div className="project-container mt-5 m-auto">
+      <div className="row">
+       <div className="col-3"></div>
+       <div className="col-6">
+       <div className="project-container mt-5 m-auto">
         <ul className="contact p-3 pt-1 pl-5">
         <h1 className="text-light">05. <br/><span className="text-theme">Lets</span> Discuss <br/>Your <span className="text-theme" >Project</span></h1><br/>
         <li className="p-2 text-light">
@@ -17,6 +20,9 @@ export default function Project(){
         </li><br/>
     </ul>
     </div>
+     <div className="col-3"></div>
+       </div>
+      </div>
     </div>
   )
 }
